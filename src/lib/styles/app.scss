@@ -1,0 +1,162 @@
+/**
+ * CSS Reset. Inspired from https://www.joshwcomeau.com/css/custom-css-reset/
+ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	line-height: calc(1em + 0.5rem);
+	font-weight: 400;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+/**
+ * Other SCSS
+ */
+
+html {
+	scroll-behavior: smooth;
+	background-color: var(--black-1);
+}
+
+body {
+	font-family: 'Outfit', sans-serif;
+	background-color: var(--black-1);
+	color: var(--white);
+}
+
+section {
+	padding: 50px 10%;
+	overflow: hidden;
+	scroll-margin-top: 100px;
+}
+
+a {
+	color: var(--white);
+	&.drawline {
+		text-decoration: none;
+		display: inline-block;
+		&::after {
+			content: '';
+			display: block;
+			width: 0;
+			height: 2px;
+			margin-top: 2px;
+			background: var(--white);
+			transition: width 0.2s;
+		}
+		&:hover::after {
+			width: 100%;
+		}
+	}
+}
+
+h1 {
+	font-size: 7rem;
+	font-weight: 700;
+	@media only screen and (max-width: 920px) {
+		font-size: 5rem;
+	}
+}
+h2 {
+	font-size: 2rem;
+	font-weight: 600;
+	@media only screen and (max-width: 920px) {
+		font-size: 1.5rem;
+	}
+}
+
+h3 {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+// Slide in right, fade in
+[data-scroll][data-scroll-type='right-fade'] {
+	transition: 1s;
+}
+[data-scroll='in'][data-scroll-type='right-fade'] {
+	opacity: 1;
+	transform: translateX(0);
+}
+[data-scroll='out'][data-scroll-type='right-fade'] {
+	opacity: 0;
+	transform: translateX(-1000px);
+}
+
+// Slide in left, fade in
+[data-scroll][data-scroll-type='left-fade'] {
+	transition: 1s;
+}
+[data-scroll='in'][data-scroll-type='left-fade'] {
+	opacity: 1;
+	transform: translateX(0);
+}
+[data-scroll='out'][data-scroll-type='left-fade'] {
+	opacity: 0;
+	transform: translateX(1000px);
+}
+
+// Pop
+[data-scroll][data-scroll-type='pop'] {
+	transition: 1s;
+}
+[data-scroll='in'][data-scroll-type='pop'] {
+	opacity: 1;
+	transform: scale(1.1);
+}
+[data-scroll='out'][data-scroll-type='pop'] {
+	opacity: 0;
+	transform: scale(1);
+}
+
+// // Slide in top, fade in
+// [data-scroll][data-scroll-type='3'] {
+//   transition: 1s;
+// }
+// [data-scroll='in'][data-scroll-type='3'] {
+//   opacity: 1;
+//   transform: translateY(0);
+// }
+// [data-scroll='out'][data-scroll-type='3'] {
+//   opacity: 0;
+//   transform: translateY(-20px);
+// }
