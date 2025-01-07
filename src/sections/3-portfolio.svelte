@@ -72,7 +72,7 @@
 			description="A website built with Svelte and Sapper that contains an integrated payment system. This project was created in collaboration with Samuel Martineau."
 			date="Feb. 2020 - Apr. 2020"
 			image="codingforyou.jpg"
-			sourceCodeLink="https://github.com/CodingForYou-net"
+			sourceCodeLink="https://github.com/CodingForYou-net/CodingForYou.net"
 			technologies={[
 				technologies.Svelte,
 				technologies.SCSS,
